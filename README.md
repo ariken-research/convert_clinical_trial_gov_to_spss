@@ -1,2 +1,4 @@
-# convert_clinical_trial_gov_to_spss
+# Description
 A tool to convert Clinical Trials Gov JSON files to SPSS SAV files
+# Installation
+Ensure you have Python 
