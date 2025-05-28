@@ -1,6 +1,6 @@
 # Description
 A tool to convert Clinical Trials Gov JSON files to SPSS SAV files\
-This tool was used in the publication ...
+This tool was used in the publication ... \
 If you ever use this tool **please** cite this publication
 # Installation
 ## Download the files
