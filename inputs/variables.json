@@ -1,0 +1,519 @@
+{
+"Variables" : 
+	[
+		{
+			"SPSS_column_name": "NCT_Number",
+			"SPSS_column_label": "NCT Number",
+			"JSON_location": "protocolSection,identificationModule,nctId",
+			"action": "copy",
+			"format": "A512"
+		},
+		{
+			"SPSS_column_name": "Title",
+			"SPSS_column_label": "Title",
+			"JSON_location": "protocolSection,identificationModule,briefTitle",
+			"action": "copy",
+			"format": "A512"
+		},
+		{
+			"SPSS_column_name": "Acronym",
+			"SPSS_column_label": "Acronym",
+			"JSON_location": "protocolSection,identificationModule,acronym",
+			"action": "copy",
+			"format": "A512"
+		},
+		{
+			"SPSS_column_name": "Study_Status",
+			"SPSS_column_label": "Study Status",
+			"JSON_location": "protocolSection,statusModule,overallStatus",
+			"action": "labels",
+			"format": "N0",
+			"labels": {
+				"COMPLETED": [
+					"Completed",
+					0
+				],
+				"UNKNOWN": [
+					"Unknown statius",
+					8
+				],
+				"WITHDRAWN": [
+					"Withdrawn",
+					1
+				],
+				"TERMINATED": [
+					"Terminated",
+					3
+				],
+				"ACTIVE_NOT_RECRUITING": [
+					"Active, not recruiting",
+					5
+				],
+				"RECRUITING": [
+					"Recruiting",
+					4
+				],
+				"SUSPENDED": [
+					"Suspended",
+					2
+				],
+				"ENROLLING_BY_INVITATION": [
+					"Enrolling by invitation",
+					7
+				],
+				"NOT_YET_RECRUITING": [
+					"Not yet recruiting",
+					6
+				]
+			}
+		},
+		{
+			"SPSS_column_name": "Study_Results",
+			"SPSS_column_label": "Study Results",
+			"JSON_location": "hasResults",
+			"action": "labels",
+			"format": "N0",
+			"labels": {
+				"False" : ["Has no results", 0 ], 
+				"True": [ "Has results", 1 ]
+			}
+		},
+		{
+			"SPSS_column_name": "Interventions_Procedure",
+			"SPSS_column_label": "Interventions procedure",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"PROCEDURE" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Device",
+			"SPSS_column_label": "Interventions Device",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"DEVICE" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Drug",
+			"SPSS_column_label": "Interventions Drug",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"DRUG" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Other",
+			"SPSS_column_label": "Interventions Other",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"OTHER" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Dietary_Supplement",
+			"SPSS_column_label": "Interventions Dietary Supplement",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"DIETARY SUPPLEMENT" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Radiation",
+			"SPSS_column_label": "Interventions Radiation",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"RADIATION" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Behavioral",
+			"SPSS_column_label": "Interventions Behavioral",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"BEHAVIORAL" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Biological",
+			"SPSS_column_label": "Interventions Biological",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"BIOLOGICAL" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Diagnostic_Test",
+			"SPSS_column_label": "Interventions Diagnostic Test",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"DIAGNOSTIC TEST" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Combination_Product",
+			"SPSS_column_label": "Interventions Combination Product",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"COMBINATION PRODUCT" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Interventions_Genetic",
+			"SPSS_column_label": "Interventions Genetic",
+			"JSON_location": "protocolSection,armsInterventionsModule,interventions",
+			"action": "multi-dict-response",
+			"format": "N0",
+			"dict_key" : "type",
+			"sum": true,
+			"labels" : {
+				"GENETIC" : ["Yes", 1 ],
+				"" : ["No", 0]				
+			},
+			"default_value" : ""
+		},
+		{
+			"SPSS_column_name": "Primary_outcome",
+			"SPSS_column_label": "Primary Outcome Measures",
+			"JSON_location": "protocolSection,outcomesModule,primaryOutcomes",
+			"action": "multi-response",
+			"count": true,
+			"format": "N0"
+		},
+		{
+			"SPSS_column_name": "Secundary_Outcome",
+			"SPSS_column_label": "Secundairy Outcome Measures",
+			"JSON_location": "protocolSection,outcomesModule,secondaryOutcomes",
+			"action": "multi-response",
+			"count": true,
+			"format": "N0"
+		},
+		{
+			"SPSS_column_name": "Phases",
+			"SPSS_column_label": "Phases",
+			"JSON_location": "protocolSection,designModule,phases",
+			"action": "multi-response",
+			"take_max": true,
+			"format": "A512",
+			"labels": {
+				"EARLY_PHASE1": ["Early Phase 1", 1],
+				"PHASE1": ["Phase 1", 1],
+				"PHASE2": ["Phase 2", 2],
+				"PHASE3": ["Phase 3", 3],
+				"PHASE4": ["Phase 4", 4],                 
+				"NA": ["Not applicable", 0]
+			},
+			"default_value" : "NA"
+		},
+		{
+			"SPSS_column_name": "Enrollment_count",
+			"SPSS_column_label": "Enrollment count",
+			"JSON_location": "protocolSection,designModule,enrollmentInfo,count",
+			"action": "copy",
+			"format": "N0"
+		},
+		{
+			"SPSS_column_name": "Enrollment_type",
+			"SPSS_column_label": "Enrollment actual or estimated",
+			"JSON_location": "protocolSection,designModule,enrollmentInfo,type",
+			"action": "labels",
+			"format": "N0",
+			"labels": {
+				"ACTUAL": ["Actual enrollment", 1],
+				"ESTIMATED": ["Estimated enrollment", 0],
+				"" : ["Missing", -1]
+			}
+		},
+		{
+			"SPSS_column_name": "Funded_By",
+			"SPSS_column_label": "Funder Type",
+			"JSON_location": "protocolSection,sponsorCollaboratorsModule,leadSponsor,class",
+			"action": "labels",
+			"count" : false,
+			"format": "A512",
+			"labels": {
+				"FED": ["U.S. Fed", 1],
+				"INDUSTRY": ["Industry", 0],
+				"NIH": ["NIH", 3],
+				"INDIV": ["Other", 2],
+				"OTHER_GOV": ["Other", 2],
+				"OTHER": ["Other", 2],
+				"NETWORK" : ["Other", 2]
+			}
+		},
+		{
+			"SPSS_column_name": "Study_Type",
+			"SPSS_column_label": "Study Type",
+			"JSON_location": "protocolSection,designModule,studyType",
+			"action": "labels",
+			"format": "N0",
+			"labels": {
+				"OBSERVATIONAL": ["Observational", 0],
+				"INTERVENTIONAL": ["Interventional", 1]
+			}
+		},
+		{
+			"SPSS_column_name": "Allocation",
+			"SPSS_column_label": "Allocation",
+			"JSON_location": "protocolSection,designModule,designInfo,allocation",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"NA": ["N/A", 2],
+				"": ["N/A", 2],
+				"RANDOMIZED": ["Randomized", 0],
+				"NON_RANDOMIZED": ["Non-randomized", 1]
+			}
+		},
+		{
+			"SPSS_column_name": "Model_Interv",
+			"SPSS_column_label": "Interventional model",
+			"JSON_location": "protocolSection,designModule,designInfo,interventionModel",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"": ["N/A", 5],
+				"FACTORIAL": ["Factorial", 1],
+				"SEQUENTIAL": ["Sequential", 4],
+				"PARALLEL": ["Parallel", 2],
+				"SINGLE_GROUP": ["Single Group", 0],
+				"CROSSOVER": ["Crossover", 3]
+			}
+		},	
+		{
+			"SPSS_column_name": "Primary_Purpose",
+			"SPSS_column_label": "Primary Purpose of the study",
+			"JSON_location": "protocolSection,designModule,designInfo,primaryPurpose",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"HEALTH_SERVICES_RESEARCH": ["Health Service Research", 4],
+				"SUPPORTIVE_CARE": ["Supportive care", 6],
+				"PREVENTION": ["Prevention", 7],
+				"DIAGNOSTIC": ["Diagnostic", 5],
+				"BASIC_SCIENCE": ["Basic science", 3],
+				"OTHER": ["Other", 8],
+				"TREATMENT": ["Treatment", 2],
+				"": ["missing", -1],
+				"DEVICE_FEASIBILITY" : ["Device feasibility",1],
+				"SCREENING" : ["Screening", 0]
+			}
+		},	
+		{
+			"SPSS_column_name": "Masking",
+			"SPSS_column_label": "Masking",
+			"JSON_location": "protocolSection,designModule,designInfo,maskingInfo,masking",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"": ["Missing", -1],
+				"NONE": ["None", 0],
+				"SINGLE": ["Single", 1],
+				"DOUBLE": ["Double", 2],
+				"TRIPLE": ["Triple", 3],
+				"QUADRUPLE": ["Quadruple", 4]
+			}
+		},	
+		{
+			"SPSS_column_name": "Model_observ",
+			"SPSS_column_label": "Observational model",
+			"JSON_location": "protocolSection,designModule,designInfo,maskingInfo,observationalModel",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"": ["N/A", 5],
+				"CASE_ONLY": ["Case Only", 1],
+				"CROSS_OVER": ["Cross-over", 3],
+				"CASE_CONTROL": ["Case control", 2],
+				"OTHER": ["Other", 4]
+			}
+		},	
+		{
+			"SPSS_column_name": "Model_time_perspective",
+			"SPSS_column_label": "Time perspective",
+			"JSON_location": "protocolSection,designModule,designInfo,maskingInfo,timePerspective",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"": ["N/A", 4],
+				"PROSPECTIVE": ["Prospective", 1],
+				"RETROSPECTIVE": ["Retrospectives", 2],
+				"CROSS_SECTIONAL": ["Cross Sectional", 0],
+				"OTHER": ["Other", 3]
+			}
+		},				
+		{
+			"SPSS_column_name": "Start_Date",
+			"SPSS_column_label": "Start Date",
+			"JSON_location": "protocolSection,statusModule,startDateStruct,date",
+			"action": "copy",
+			"format": "EDATE10"
+		},
+		{
+			"SPSS_column_name": "Start_Date_est_act",
+			"SPSS_column_label": "Start Date estimated or actual",
+			"JSON_location": "protocolSection,statusModule,startDateStruct,type",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"ESTIMATED": ["Estimated", 1],
+				"ACTUAL": ["Actual", 2],
+				"": ["N/A", 0]
+			}	
+		},
+		{
+			"SPSS_column_name": "Pri_Compl_Date",
+			"SPSS_column_label": "Primary Completion Date",
+			"JSON_location": "protocolSection,statusModule,primaryCompletionDateStruct,date",
+			"action": "copy",
+			"format": "EDATE10"
+		},
+		{
+			"SPSS_column_name": "Prim_Compl_Date_est_act",
+			"SPSS_column_label": "Primairy Completion Date estimated or actual",
+			"JSON_location": "protocolSection,statusModule,primaryCompletionDateStruct,type",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"ESTIMATED": ["Estimated", 1],
+				"ACTUAL": ["Actual", 2],
+				"": ["N/A", 0]
+			}	
+		},
+		{
+			"SPSS_column_name": "Compl_Date",
+			"SPSS_column_label": "Completion Date",
+			"JSON_location": "protocolSection,statusModule,completionDateStruct,date",
+			"action": "copy",
+			"format": "EDATE10"
+		},
+		{
+			"SPSS_column_name": "Compl_Date_est_act",
+			"SPSS_column_label": "Completion Date estimated or actual",
+			"JSON_location": "protocolSection,statusModule,completionDateStruct,type",
+			"action": "labels",
+			"count" : false,			
+			"format": "A512",
+			"labels": {
+				"ESTIMATED": ["Estimated", 1],
+				"ACTUAL": ["Actual", 2],
+				"": ["N/A", 0]
+			}	
+		},
+		{
+			"SPSS_column_name": "First_Posted",
+			"SPSS_column_label": "First Posted",
+			"JSON_location": "protocolSection,statusModule,studyFirstSubmitDate",
+			"action": "copy",
+			"format": "EDATE10"
+		},
+		{
+			"SPSS_column_name": "Results_First_Posted",
+			"SPSS_column_label": "Results First Posted",
+			"JSON_location": "protocolSection,statusModule,resultsFirstSubmitDate",
+			"action": "copy",
+			"format": "EDATE10"
+		},
+		{
+			"SPSS_column_name": "Last_Update_Posted",
+			"SPSS_column_label": "Last Update Posted",
+			"JSON_location": "protocolSection,statusModule,lastUpdateSubmitDate",
+			"action": "copy",
+			"format": "EDATE10"
+		}
+	],
+"Variables_not_found_default_values" :
+	{
+		"acronym"							: "",
+		"armsInterventionsModule"           : {},
+		"interventions"                     : "",
+		"primaryOutcomes"                   : [],
+		"phases"                            : [],
+		"completionDateStruct"              : {},
+		"enrollmentInfo"                    : {},
+		"outcomesModule"                    : {},
+		"secondaryOutcomes"                 : [],
+		"primaryCompletionDateStruct"       : {},
+		"startDateStruct"                   : {},
+		"resultsFirstSubmitDate"            : "",
+		"observationalModel"				: "",
+		"timePerspective"					: "",
+		"allocation"						: "",
+		"interventionModel"					: "",
+		"primaryPurpose"					: "",
+		"maskingInfo"						: {},
+		"masking"						    : "",
+		"designInfo" 						: {},
+		"type"								: "",
+		"date"								: "",
+		"count"								: -1
+	}
+}
