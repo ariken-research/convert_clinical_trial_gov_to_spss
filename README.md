@@ -1,5 +1,7 @@
 # Description
-A tool to convert Clinical Trials Gov JSON files to SPSS SAV files
+A tool to convert Clinical Trials Gov JSON files to SPSS SAV files\
+This tool was used in the publication ...
+If you ever use this tool **please** cite this publication
 # Installation
 ## Using GIT
 Use the appropriate Git commands if you are familiar
