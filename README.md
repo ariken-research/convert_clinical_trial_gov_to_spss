@@ -7,12 +7,12 @@ The tool was tested with this data, but can likely also be used for other applic
 If you use any of the Python or SPSS code in this repository, **please** cite this publication: 
 # Installation
 ## Download the files
-### Using GIT
-Install git \
-run ```git clone https://github.com/ariken-research/convert_clinical_trial_gov_to_spss``` in the appropriate directory
 ### Simple way
 Click on the green button that says "<> code" and select download zip \
 Unzip this zip file in a location where you want to work with the script
+### Using GIT
+Install git \
+run ```git clone https://github.com/ariken-research/convert_clinical_trial_gov_to_spss``` in the appropriate directory
 # Documentation
-When you downloaded (through git or zip file) there will be a Totorial.pptx in the documents sub-folder\
+When you downloaded or cloned the repository, you will find a Tutorial.pptx in the documents sub-folder\
 **Please** read this to setup the right environment and work with the script
