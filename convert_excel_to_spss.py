@@ -25,6 +25,7 @@ import sys
 import os
 import math
 from collections import defaultdict
+
     
 def replace_by_label_index(data, variable_info):
     output = []
