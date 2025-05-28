@@ -58,8 +58,8 @@ def labels_to_spss_labels(labels):
         spss_labels[new_key] = new_val
     return spss_labels
    
-input_json_fn  = "input/ctg-studies.json"
-variable_fn = "input/variables.json"
+input_json_fn  = "inputs/ctg-studies.json"
+variable_fn = "inputs/variables.json"
 output_fn   = "output.sav"
 
 with open(input_json_fn) as f:
