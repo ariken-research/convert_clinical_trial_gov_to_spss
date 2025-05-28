@@ -5,7 +5,7 @@ If you ever use this tool **please** cite this publication
 # Installation
 ## Download the files
 ### Using GIT
-Install git
+Install git \
 run ```git clone https://github.com/ariken-research/convert_clinical_trial_gov_to_spss```
 ### Simple way
 Go to green code button and select download zip
