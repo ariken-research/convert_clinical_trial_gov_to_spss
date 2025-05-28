@@ -10,5 +10,5 @@ Use the appropriate Git commands to download this repo if you are familiar
 Go to green code button and select download zip
 Unzip this zip file in a location where you want to work with the script
 # Documentation
-When you downloaded (through git or zip file) there will be a Totorial.pptx in the documents sub-folder
+When you downloaded (through git or zip file) there will be a Totorial.pptx in the documents sub-folder\
 **Please** read this to setup the right Anaconda environment 
