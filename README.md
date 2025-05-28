@@ -8,7 +8,7 @@ If you ever use this tool **please** cite this publication
 Install git \
 run ```git clone https://github.com/ariken-research/convert_clinical_trial_gov_to_spss``` in the appropriate directory
 ### Simple way
-Go to green code button and select download zip
+Click on the green button that says "<> code" and select download zip \
 Unzip this zip file in a location where you want to work with the script
 # Documentation
 When you downloaded (through git or zip file) there will be a Totorial.pptx in the documents sub-folder\
