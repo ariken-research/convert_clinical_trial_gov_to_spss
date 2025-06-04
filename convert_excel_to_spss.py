@@ -1,32 +1,11 @@
-# TODO
-#
-#- ignore type
-#- Label from Excel. Specify Name
-#- 
-#- group token??
-#
-#- SPSS_column_name allow change
-#
-#- Forbidden characters SPSS
-#
-#- Change label strings?
-#
-#- new type: multi-response, ignore sub labels. 
-
-
 import json
  
 import pandas as pd
-from pandas import ExcelWriter
-from pandas import ExcelFile
 import pyreadstat
-import copy
 import sys
 import os
-import math
-from collections import defaultdict
+from datetime import datetime, date
 
-    
 def replace_by_label_index(data, variable_info):
     output = []
     for element in data:
@@ -57,25 +36,67 @@ def labels_to_spss_labels(labels):
         new_val              = val[0]
         spss_labels[new_key] = new_val
     return spss_labels
-   
-input_json_fn  = "inputs/ctg-studies.json"
-variable_fn = "inputs/variables.json"
-output_fn   = "output.sav"
+
+def flexible_string_to_date(date_string: str) -> date | None:
+    """
+    Constructs a datetime.date object from a string.
+
+    Handles formats: 'YYYY-MM-DD', 'YYYY-MM', and 'YYYY'.
+    - 'YYYY' becomes YYYY-01-01.
+    - 'YYYY-MM' becomes YYYY-MM-01.
+
+    Args:
+        date_string: The input string containing the date.
+
+    Returns:
+        A datetime.date object, or None if the string doesn't match
+        any of the expected formats.
+    """
+    if not isinstance(date_string, str):
+        print(f"Warning: Input '{date_string}' is not a string. Returning None.")
+        return None
+
+    formats_to_try = ['%Y-%m-%d', '%Y-%m', '%Y']
+
+    for fmt in formats_to_try:
+        try:
+            # Try to parse the string with the current format
+            dt_object = datetime.strptime(date_string, fmt)
+            # If successful, return the date part
+            return dt_object.date()
+        except ValueError:
+            # If parsing fails, try the next format
+            continue
+
+    # If none of the formats worked, return None or raise an error
+    print(f"Warning: Could not parse '{date_string}' with known formats. Returning None.")
+    return None
+
+input_path = "inputs"
+input_json_fn  = os.path.join(input_path, "ctg-studies.json")
+variable_fn    = os.path.join(input_path, "variables.json")
+
+output_path = "outputs"
+os.makedirs(output_path, exist_ok=True)
+output_fn = os.path.join(output_path, "ctg-studies.sav")
+
+debug_output_path = "debug_outputs"
+os.makedirs(debug_output_path, exist_ok=True)
+debug_variable_value_labels_fn = os.path.join(debug_output_path, "variable_value_labels.json")
+debug_variable_format_fn       = os.path.join(debug_output_path, "debug_variable_format.json")
+debug_excel_raw_json_in_xlsx   = os.path.join(debug_output_path, "debug_excel_raw_json.xlsx")
+debug_output_in_xlsx           = os.path.join(debug_output_path, "debug_excel_output.xlsx")
+
+"debug_excel_output_json.xlsx"
+"debug_excel_output_json.xlsx"
 
 with open(input_json_fn) as f:
     ctg_json_data = json.load(f)
 
 clean_up_ctg_input = False
 if clean_up_ctg_input:
-    with open(input_json, 'w', encoding='utf-8') as f:
-        ctg_json_data.dump(json_data, f, indent=2)                    
-
-if False:
-    if not os.path.exists(variable_fn):
-        print("Making empty variables list: ", variable_fn)
-        make_empty_variable_list(column_names_in_out, variable_fn)
-        print("Exiting..")
-        sys.exit(-1)
+    with open(input_json_fn, 'w', encoding='utf-8') as f:
+        ctg_json_data.dump(ctg_json_data, f, indent=2)
 
 variable_value_labels = {}
 variable_format       = {}
@@ -88,9 +109,9 @@ with open(variable_fn) as f:
         if "labels" in variable_info:
             variable_value_labels[SPSS_column_name] = labels_to_spss_labels(variable_info["labels"])
 
-    with open("debug_variable_value_labels.json", 'w', encoding='utf-8') as f:
+    with open(debug_variable_value_labels_fn, 'w', encoding='utf-8') as f:
         json.dump(variable_value_labels, f, indent=2)
-    with open("debug_variable_format.json", 'w', encoding='utf-8') as f:
+    with open(debug_variable_format_fn, 'w', encoding='utf-8') as f:
         json.dump(variable_format, f, indent=2)
     
     #variables_not_found = set()
@@ -157,8 +178,10 @@ with open(variable_fn) as f:
                         output_val = sum(labels)
                
             else:
-                output_val = ctg_json_content
-               
+                if variable_info["format"] == "EDATE10":
+                    output_val = flexible_string_to_date(ctg_json_content)
+                else:
+                    output_val = ctg_json_content
             output_row[SPSS_column_name]  = output_val
                 
             
@@ -172,13 +195,14 @@ if output_variables_not_found:
     for variable_not_found in variables_not_found:
         print(variable_not_found)
 
-if False:
+write_raw_json_to_xlsx = True
+if write_raw_json_to_xlsx:
     df_json = pd.DataFrame.from_dict(output_data_json)
-    with pd.ExcelWriter("debug_excel_output_json.xlsx") as writer:
-        df_json.to_excel(writer) 
+    with pd.ExcelWriter(debug_excel_raw_json_in_xlsx) as writer:
+        df_json.to_excel(writer)
 
 df = pd.DataFrame.from_dict(output_data)
-with pd.ExcelWriter("debug_excel_output.xlsx") as writer:
+with pd.ExcelWriter(debug_output_in_xlsx) as writer:
     df.to_excel(writer) 
 
 pyreadstat.write_sav(df, output_fn, variable_value_labels=variable_value_labels, variable_format = variable_format)            
