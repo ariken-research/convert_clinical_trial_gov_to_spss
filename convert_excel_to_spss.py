@@ -69,7 +69,7 @@ def flexible_string_to_date(date_string: str) -> date | None:
             continue
 
     # If none of the formats worked, return None or raise an error
-    print(f"Warning: Could not parse '{date_string}' with known formats. Returning None.")
+    print(f"Warning: Could not parse date '{date_string}' with known formats. Returning None.")
     return None
 
 input_path = "inputs"
@@ -102,6 +102,7 @@ variable_value_labels = {}
 variable_format       = {}
 
 with open(variable_fn) as f:
+    print("Reading {} and setting column formats and labels..".format(variable_fn))
     variables = json.load(f)
     for variable_info in variables["Variables"]:
         SPSS_column_name                  = variable_info["SPSS_column_name"] 
@@ -114,14 +115,9 @@ with open(variable_fn) as f:
     with open(debug_variable_format_fn, 'w', encoding='utf-8') as f:
         json.dump(variable_format, f, indent=2)
     
-    #variables_not_found = set()
-
-    for variable_name, default_value in variables["Variables_not_found_default_values"].items():
-        print ("If variable '{}' is not found it will get -> {} <- as a value".format(variable_name, default_value))
-    
+    print("Reading variables.json and setting column formats and labels..")
     output_data      = []
     output_data_json = []
-    
     for ctg_json_data_study in ctg_json_data:
         output_row      = {}
         output_row_json = {}
