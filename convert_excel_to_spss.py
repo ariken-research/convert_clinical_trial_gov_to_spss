@@ -37,7 +37,7 @@ def labels_to_spss_labels(labels):
         spss_labels[new_key] = new_val
     return spss_labels
 
-def flexible_string_to_date(date_string: str) -> date | None:
+def flexible_string_to_date(date_string):
     """
     Constructs a datetime.date object from a string.
 
