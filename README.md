@@ -1,8 +1,8 @@
 # Description
-This repository the data, Python script and SPSS code that was used to create results published in ..... \
+This repository contains the data, Python script and SPSS code that was used to create results published in ..... \
 Using this repository, you can fully reproduce the results. \
-It contains a tool to convert Clinical Trials Gov JSON files with information about clinical studies to SPSS SAV files\
-It contains the JSON data that was used in this publication and pulled from clinicaltrial.gov at May .., 2025 \
+It contains a tool to convert ClinicalTrials.Gov JSON files with information about clinical studies to SPSS SAV files\
+It contains the JSON data that was used in this publication and pulled from clinicaltrial.gov at May 22, 2025 \
 The tool was tested with this data, but can likely also be used for other applications. Minor modifications may be necessary. \
 If you use any of the Python or SPSS code in this repository, **please** cite this publication: 
 # Installation
