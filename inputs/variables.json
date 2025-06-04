@@ -254,7 +254,7 @@
 			"JSON_location": "protocolSection,designModule,phases",
 			"action": "multi-response",
 			"take_max": true,
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"EARLY_PHASE1": ["Early Phase 1", 1],
 				"PHASE1": ["Phase 1", 1],
@@ -290,7 +290,7 @@
 			"JSON_location": "protocolSection,sponsorCollaboratorsModule,leadSponsor,class",
 			"action": "labels",
 			"count" : false,
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"FED": ["U.S. Fed", 1],
 				"INDUSTRY": ["Industry", 0],
@@ -318,7 +318,7 @@
 			"JSON_location": "protocolSection,designModule,designInfo,allocation",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"NA": ["N/A", 2],
 				"": ["N/A", 2],
@@ -332,7 +332,7 @@
 			"JSON_location": "protocolSection,designModule,designInfo,interventionModel",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"": ["N/A", 5],
 				"FACTORIAL": ["Factorial", 1],
@@ -348,7 +348,7 @@
 			"JSON_location": "protocolSection,designModule,designInfo,primaryPurpose",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"HEALTH_SERVICES_RESEARCH": ["Health Service Research", 4],
 				"SUPPORTIVE_CARE": ["Supportive care", 6],
@@ -368,7 +368,7 @@
 			"JSON_location": "protocolSection,designModule,designInfo,maskingInfo,masking",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"": ["Missing", -1],
 				"NONE": ["None", 0],
@@ -384,7 +384,7 @@
 			"JSON_location": "protocolSection,designModule,designInfo,maskingInfo,observationalModel",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"": ["N/A", 5],
 				"CASE_ONLY": ["Case Only", 1],
@@ -399,7 +399,7 @@
 			"JSON_location": "protocolSection,designModule,designInfo,maskingInfo,timePerspective",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"": ["N/A", 4],
 				"PROSPECTIVE": ["Prospective", 1],
@@ -421,7 +421,7 @@
 			"JSON_location": "protocolSection,statusModule,startDateStruct,type",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"ESTIMATED": ["Estimated", 1],
 				"ACTUAL": ["Actual", 2],
@@ -441,7 +441,7 @@
 			"JSON_location": "protocolSection,statusModule,primaryCompletionDateStruct,type",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"ESTIMATED": ["Estimated", 1],
 				"ACTUAL": ["Actual", 2],
@@ -461,7 +461,7 @@
 			"JSON_location": "protocolSection,statusModule,completionDateStruct,type",
 			"action": "labels",
 			"count" : false,			
-			"format": "A512",
+			"format": "N0",
 			"labels": {
 				"ESTIMATED": ["Estimated", 1],
 				"ACTUAL": ["Actual", 2],
