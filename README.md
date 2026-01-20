@@ -1,4 +1,5 @@
 # Research Waste in Total Knee Arthroplasty Studies
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18316656.svg)](https://doi.org/10.5281/zenodo.18316656)
 
 This repository contains the data and Python scripts used to generate the results published in:
 
