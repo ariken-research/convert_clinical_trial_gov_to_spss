@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: "Iken"
+    given-names: "Annabelle R."
+    affiliation: "Leiden Universitair Medisch Centrum"
+  - family-names: "Schaap"
+    given-names: "Michiel"
+    affiliation: "Imperial College London"
+  - family-names: "Poolman"
+    given-names: "Rudolf W."
+    affiliation: "Leiden Universitair Medisch Centrum; Onze Lieve Vrouwe Gasthuis"
+  - family-names: "Gademan"
+    given-names: "Maaike G. J."
+    affiliation: "Leiden Universitair Medisch Centrum"
+title: "Research waste in total knee arthroplasty studies: an observational study on registered trials"
+version: 1.0.0
+date-released: 2026-01-20
+repository-code: "https://github.com/ariken-research/convert_clinical_trial_gov_to_spss"
+keywords:
+  - "Information Extraction"
+  - "Orthopedics"
+  - "Knee"
+  - "Registries"
+  - "Research Design"
+preferred-citation:
+  type: article
+  authors:
+    - family-names: "Iken"
+      given-names: "Annabelle R."
+    - family-names: "Schaap"
+      given-names: "Michiel"
+    - family-names: "Poolman"
+      given-names: "Rudolf W."
+    - family-names: "Gademan"
+      given-names: "Maaike G. J."
+  doi: "bmjopen-2024-092409"
+  journal: "BMJ Open"
+  title: "Research waste in total knee arthroplasty studies: an observational study on registered trials"
+  year: 2026

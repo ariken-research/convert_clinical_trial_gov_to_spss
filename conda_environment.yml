@@ -1,0 +1,54 @@
+name: ctg_to_spss
+channels:
+  - conda-forge
+  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
+  - https://repo.anaconda.com/pkgs/msys2
+dependencies:
+  - blas=1.0=mkl
+  - bottleneck=1.4.2=py312h4b0e54e_0
+  - bzip2=1.0.8=h2bbff1b_6
+  - ca-certificates=2025.4.26=h4c7d964_0
+  - et_xmlfile=2.0.0=pyhd8ed1ab_1
+  - expat=2.7.0=he0c23c2_0
+  - intel-openmp=2023.1.0=h59b6b97_46320
+  - libexpat=2.7.0=he0c23c2_0
+  - libffi=3.4.4=hd77b12b_1
+  - libiconv=1.18=h135ad9c_1
+  - liblzma=5.8.1=h2466b09_1
+  - liblzma-devel=5.8.1=h2466b09_1
+  - libsqlite=3.49.2=h67fdade_0
+  - libzlib=1.3.1=h2466b09_2
+  - mkl=2023.1.0=h6b88ed4_46358
+  - mkl-service=2.4.0=py312h827c3e9_2
+  - mkl_fft=1.3.11=py312h827c3e9_0
+  - mkl_random=1.2.8=py312h0158946_0
+  - numexpr=2.10.1=py312h4cd664f_0
+  - numpy=2.0.1=py312hfd52020_1
+  - numpy-base=2.0.1=py312h4dde369_1
+  - openpyxl=3.1.5=py312he70551f_1
+  - openssl=3.5.0=ha4e3fda_1
+  - pandas=2.2.3=py312h5da7b33_0
+  - pip=25.1=pyhc872135_2
+  - pyreadstat=1.2.9=py312hbb96121_0
+  - python=3.12.9=h3f84c4b_1_cpython
+  - python-dateutil=2.9.0post0=py312haa95532_2
+  - python-tzdata=2025.2=pyhd3eb1b0_0
+  - python_abi=3.12=7_cp312
+  - pytz=2024.1=py312haa95532_0
+  - setuptools=78.1.1=py312haa95532_0
+  - six=1.17.0=py312haa95532_0
+  - sqlite=3.45.3=h2bbff1b_0
+  - tbb=2021.8.0=h59b6b97_0
+  - tk=8.6.13=h2c6b04d_2
+  - tzdata=2025b=h04d1e81_0
+  - ucrt=10.0.22621.0=h57928b3_1
+  - vc=14.42=haa95532_5
+  - vc14_runtime=14.42.34438=hfd919c2_26
+  - vs2015_runtime=14.42.34438=h7142326_26
+  - wheel=0.45.1=py312haa95532_0
+  - xz=5.8.1=h208afaa_1
+  - xz-tools=5.8.1=h2466b09_1
+  - zlib=1.3.1=h2466b09_2
+prefix: C:\Users\michi\anaconda3\envs\ctg_to_spss
