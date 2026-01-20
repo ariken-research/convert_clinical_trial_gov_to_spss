@@ -23,6 +23,11 @@ keywords:
   - "Knee"
   - "Registries"
   - "Research Design"
+# This block links the specific Zenodo DOI to the code
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.18316656
+    description: "The software archive on Zenodo"
 preferred-citation:
   type: article
   authors:
